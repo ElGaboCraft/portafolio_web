@@ -1,9 +1,12 @@
-import { Button } from "@/components/ui/button"
-import {FiDownload} from "react-icons/fi"
+"use client";
+import { Button } from "@/components/ui/button";
+import {FiDownload} from "react-icons/fi";
+import { TypeAnimation } from "react-type-animation";
 
 //components
 import Socials from "@/components/Socials"
 import Photo from "@/components/Photo"
+import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
@@ -14,9 +17,27 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="tetx-xl">Software Developer</span>
             <h1 className="h1 mb-6">
-              Hola, Soy <br /><span className="text-accent">Axel Zuñiga</span>
+              Hola, Soy <br />
+              <TypeAnimation 
+                className="text-accent text-accent-animation h1 mb-6"
+                sequence={[
+                  "Axel Zuñiga",
+                  1000,
+                  "Desarrollador Web",
+                  1000,
+                  "Desarrollador Android",
+                  1000,
+                  "Desarrollador UI/UX",
+                  1000,
+                  "Editor Multimedia",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[500px] text-justify mb-9 text-white/80">
               Estoy aprendiendo a crear experiencias digitales atractivas y estoy adquiriendo habilidades en varios lenguajes y tecnologías de programación.
             </p>
             {/* btn and socials */}
@@ -43,6 +64,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Stats />
     </section>
   )
 }
