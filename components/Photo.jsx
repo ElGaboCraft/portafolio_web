@@ -51,7 +51,7 @@ const Photo = () => {
             className="w-[258px] h-[258px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute inset-0 flex items-center justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
             <Image
-                src="https://raw.githubusercontent.com/ElGaboCraft/portafolio-personal/master/public/images/hero-image-origin.png"
+                src="https://raw.githubusercontent.com/ElGaboCraft/portafolio_web/main/public/assets/images/hero-image-origin.png"
                 priority
                 quality={100}
                 alt=""
