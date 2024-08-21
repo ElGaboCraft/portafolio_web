@@ -1,5 +1,238 @@
+"use client";
+
+import { Description } from "@radix-ui/react-dialog";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
+
+//about data
+const about = {
+  title: "Acerca De Mi",
+  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  info: [
+    {
+      fieldName: "Nombre",
+      fieldValue: "Axel Zuñiga"
+    },
+    {
+      fieldName: "Celular",
+      fieldValue: "+593 96 206 0168"
+    },
+    {
+      fieldName: "Experiencia",
+      fieldValue: "2+ Years"
+    },
+    {
+      fieldName: "Discord",
+      fieldValue: "@asempay"
+    },
+    {
+      fieldName: "Nacionalidad",
+      fieldValue: "Ecuatoriano"
+    },
+    {
+      fieldName: "Correo",
+      fieldValue: "axgabriel0214@hotmail.com"
+    },
+    {
+      fieldName: "Idiomas",
+      fieldValue: "Spanish, English"
+    },
+    
+  ]    
+}
+
+// experience data
+const experience = {
+  icon: 'https://raw.githubusercontent.com/ElGaboCraft/portafolio_web/82dbc3d2bf0d45118e603d96752920b5c074afdc/public/assets/resume/badge.svg',
+  title: "Mi Experiencia",
+  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  items: [
+    {
+      company: "EMPRESA",
+      postion: "POSICION",
+      duration: "TIEMPO",
+    },
+    {
+      company: "EMPRESA",
+      postion: "POSICION",
+      duration: "TIEMPO",
+    },
+    {
+      company: "EMPRESA",
+      postion: "POSICION",
+      duration: "TIEMPO",
+    },
+    {
+      company: "EMPRESA",
+      postion: "POSICION",
+      duration: "TIEMPO",
+    },
+    {
+      company: "EMPRESA",
+      postion: "POSICION",
+      duration: "TIEMPO",
+    },
+    {
+      company: "EMPRESA",
+      postion: "POSICION",
+      duration: "TIEMPO",
+    },
+  ]
+}
+
+// education data
+const education = {
+  icon: 'https://raw.githubusercontent.com/ElGaboCraft/portafolio_web/82dbc3d2bf0d45118e603d96752920b5c074afdc/public/assets/resume/cap.svg',
+  title: "Mi Educación",
+  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  items: [
+    {
+      institution: "UNIDAD EDUCATIVA",
+      degree: "TITULO",
+      duration: "AÑO LECTIVO",
+    },
+    {
+      institution: "UNIDAD EDUCATIVA",
+      degree: "TITULO",
+      duration: "AÑO LECTIVO",
+    },
+    {
+      institution: "UNIDAD EDUCATIVA",
+      degree: "TITULO",
+      duration: "AÑO LECTIVO",
+    },
+    {
+      institution: "UNIDAD EDUCATIVA",
+      degree: "TITULO",
+      duration: "AÑO LECTIVO",
+    },
+    {
+      institution: "UNIDAD EDUCATIVA",
+      degree: "TITULO",
+      duration: "AÑO LECTIVO",
+    },
+    {
+      institution: "UNIDAD EDUCATIVA",
+      degree: "TITULO",
+      duration: "AÑO LECTIVO",
+    },
+  ]
+}
+
+// skills data
+const skills = {
+  title: "Mis Habilidades",
+  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  skillList: [
+    {
+      icon: <FaHtml5 />,
+      name: "html 5",
+    },
+    {
+      icon: <FaCss3 />,
+      name: "css 3",
+    },
+    {
+      icon: <FaJs />,
+      name: "javascript",
+    },
+    {
+      icon: <FaReact />,
+      name: "react.js",
+    },
+    {
+      icon: <SiNextdotjs />,
+      name: "next.js",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "tailwind.css",
+    },
+    {
+      icon: <FaNodeJs />,
+      name: "node.js",
+    },
+    {
+      icon: <FaFigma />,
+      name: "figma",
+    },
+  ]
+}
+
 const Resume = () => {
-  return <div>Resume page</div>
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+    >
+      <div className="container mx-auto">
+        <Tabs
+          defaultValue="experience"
+          className="flex flex-col xl:flex-row gap-[60px]"
+        >
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="about">About Me</TabsTrigger>
+          </TabsList>
+
+          {/* content */}
+          <div className="min-h-[70vh] w-full">
+            {/* experience */}
+            <TabsContent value="experience" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <p className="max-w-[600x] text-white/60 mx-auto xl:mx-0">
+                  {experience.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {experience.items.map((item, index) => {
+                      return (
+                        <li 
+                          key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.postion}</h3>
+                          <div className="flex items-center gap-3">
+                            {/* dot */}
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60">{item.company}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+            {/* education */}
+            <TabsContent value="education" className="w-full">
+              education
+            </TabsContent>
+            {/* skills */}
+            <TabsContent value="skills" className="w-full">
+              skills
+            </TabsContent>
+            {/* about */}
+            <TabsContent value="about" className="w-full">
+              about
+            </TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </motion.div>
+  );
 }
 
 export default Resume 
