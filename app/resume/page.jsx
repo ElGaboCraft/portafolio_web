@@ -1,8 +1,8 @@
 "use client";
 
 import { Description } from "@radix-ui/react-dialog";
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiNextdotjs, SiWondersharefilmora, SiAdobephotoshop } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -10,8 +10,9 @@ import { motion } from "framer-motion";
 
 //about data
 const about = {
+  icon: '',
   title: "Acerca De Mi",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  description: "Datos personales y métodos de contacto.",
   info: [
     {
       fieldName: "Nombre",
@@ -49,37 +50,32 @@ const about = {
 const experience = {
   icon: 'https://raw.githubusercontent.com/ElGaboCraft/portafolio_web/82dbc3d2bf0d45118e603d96752920b5c074afdc/public/assets/resume/badge.svg',
   title: "Mi Experiencia",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  description: "Experiencia laboral obtenida hasta el momento.",
   items: [
     {
-      company: "EMPRESA",
-      postion: "POSICION",
-      duration: "TIEMPO",
+      company: "SoftwareOne",
+      postion: "Analista De Soporte En Sitio N2",
+      duration: "2023/11 - 2024/04",
     },
     {
-      company: "EMPRESA",
-      postion: "POSICION",
-      duration: "TIEMPO",
+      company: "Royal Prestige",
+      postion: "Asesor Comercial Ejecutivo",
+      duration: "2022/06 - 2023/06",
     },
     {
-      company: "EMPRESA",
-      postion: "POSICION",
-      duration: "TIEMPO",
+      company: "HP Servicio Técnico",
+      postion: "Técnico De Mantenimiento",
+      duration: "2021/03 - 2021/09",
     },
     {
-      company: "EMPRESA",
-      postion: "POSICION",
-      duration: "TIEMPO",
+      company: "Apple Maniaticos",
+      postion: "Agente De Ventas",
+      duration: "2020/01 - 2020/11",
     },
     {
-      company: "EMPRESA",
-      postion: "POSICION",
-      duration: "TIEMPO",
-    },
-    {
-      company: "EMPRESA",
-      postion: "POSICION",
-      duration: "TIEMPO",
+      company: "Tienda Friki",
+      postion: "Editor Multimedia",
+      duration: "2018/02 - 2019/12",
     },
   ]
 }
@@ -88,45 +84,51 @@ const experience = {
 const education = {
   icon: 'https://raw.githubusercontent.com/ElGaboCraft/portafolio_web/82dbc3d2bf0d45118e603d96752920b5c074afdc/public/assets/resume/cap.svg',
   title: "Mi Educación",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  description: "Formación en tecnología con enfoque en desarrollo web, programación y análisis de datos.",
   items: [
     {
-      institution: "UNIDAD EDUCATIVA",
-      degree: "TITULO",
-      duration: "AÑO LECTIVO",
+      institution: "ConquerBlocks Academy",
+      degree: "Master FullStack Web-Developer",
+      duration: "2023 - Actualidad",
     },
     {
-      institution: "UNIDAD EDUCATIVA",
-      degree: "TITULO",
-      duration: "AÑO LECTIVO",
+      institution: "ITIL Foundation For IT",
+      degree: "ITL 4 Edition",
+      duration: "2024 - 2024",
     },
     {
-      institution: "UNIDAD EDUCATIVA",
-      degree: "TITULO",
-      duration: "AÑO LECTIVO",
+      institution: "Inst. Sup. Tec. Guayaquil",
+      degree: "Desarrolador De Software",
+      duration: "2021 - 2024",
     },
     {
-      institution: "UNIDAD EDUCATIVA",
-      degree: "TITULO",
-      duration: "AÑO LECTIVO",
+      institution: "UE. Provincia De Los Ríos",
+      degree: "Bachillerato Técnico En Informática",
+      duration: "2020 - 2021",
     },
     {
-      institution: "UNIDAD EDUCATIVA",
-      degree: "TITULO",
-      duration: "AÑO LECTIVO",
+      institution: "Universidad Hemisferios",
+      degree: "Formador De Formadores",
+      duration: "2023 - 2023",
     },
     {
-      institution: "UNIDAD EDUCATIVA",
-      degree: "TITULO",
-      duration: "AÑO LECTIVO",
+      institution: "Solo Learn",
+      degree: "HTML Azanzado",
+      duration: "2019 - 2019",
+    },
+    {
+      institution: "Inst. Sup. Tec. Guayaquil",
+      degree: "Robótica E IOT",
+      duration: "2022 - 2022",
     },
   ]
 }
 
 // skills data
 const skills = {
+  icon: '',
   title: "Mis Habilidades",
-  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consectetur non vel quam fugit tenetur.",
+  description: "Habilidades en desarrollo web, programación y diseño de interfaces.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -141,10 +143,6 @@ const skills = {
       name: "javascript",
     },
     {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
       icon: <SiNextdotjs />,
       name: "next.js",
     },
@@ -157,8 +155,12 @@ const skills = {
       name: "node.js",
     },
     {
-      icon: <FaFigma />,
-      name: "figma",
+      icon: <SiWondersharefilmora />,
+      name: "Wondershare Filmora",
+    },
+    {
+      icon: <SiAdobephotoshop />,
+      name: "Adobe Photoshop",
     },
   ]
 }
@@ -186,12 +188,15 @@ const Resume = () => {
           </TabsList>
 
           {/* content */}
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[70vh] capitalize w-full">
 
             {/* experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <div className="flex">
+                  <img src={experience.icon} alt="Icon" className="h-10 w-10 mr-4 mt-[0,5] " />
+                  <h3 className="text-4xl font-bold">{experience.title}</h3>
+                </div>
                 <p className="max-w-[600x] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
@@ -221,7 +226,10 @@ const Resume = () => {
             {/* education */}
             <TabsContent value="education" className="w-full">
             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <div className="flex">
+                  <img src={education.icon} alt="Icon" className="h-10 w-10 mr-4 mt-[0,5] " />
+                  <h3 className="text-4xl font-bold">{education.title}</h3>
+                </div>
                 <p className="max-w-[600x] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
@@ -252,7 +260,9 @@ const Resume = () => {
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <div className="flex">
+                    <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  </div>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
@@ -283,7 +293,9 @@ const Resume = () => {
             {/* about */}
             <TabsContent value="about" className="w-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <div className="flex">
+                  <h3 className="text-4xl font-bold">{about.title}</h3>
+                </div>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
